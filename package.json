@@ -1,0 +1,19 @@
+{
+  "name": "cordova-plugin-pdftopng",
+  "version": "0.0.3",
+  "description": "PDF to PNG Converter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bendspoons/cordova-plugin-pdftopng.git"
+  },
+  "author": "Dominic Roesmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bendspoons/cordova-plugin-pdftopng/issues"
+  },
+  "homepage": "https://github.com/bendspoons/cordova-plugin-pdftopng"
+}
