@@ -108,7 +108,6 @@ public class PdfToPng extends CordovaPlugin {
                   outputBase64 = true;
                   outputSave = false;
                 } else if(outputType.equals("file")) {
-                    Log.i("************** inputFile", "PEEEEEEEEEEEEEEEEEENIS");
 
                     targetFileDir = args.getString(5);
                     targetFileName = args.getString(6);
