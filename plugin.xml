@@ -1,46 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    id="com.bendspoons.cordova.plugin.pdf2png"
+    id="cordova-plugin-pdftopng"
     version="0.3.0">
 
-    <name>PDF2PNG</name>
-    <description>Cordova Plugin Returns converted into base64 format PNG from local PDF page. Can be used for creating thumbnails of PDF pages without need to store full sized images.</description>
-    <license>Apache 2.0</license>
-    <keywords>cordova,plugin,pdf,png,base64</keywords>
-    <author>Lisunov Ilia (developer@ipads.cz) for iOS, Dominic Roesmann (d.roesmann@dimento.com) for Android</author>
+    <name>PDF to PNG</name>
+    <description>Cordova Plugin to render a PDF Page (selectable) to a PNG Image</description>
+    <license>MIT</license>
+    <keywords>cordova,plugin,pdf,png,base64,android,ios,swift</keywords>
+    <author>Dominic Roesmann (dominic.roesmann@googlemail.com)</author>
 
     <engines>
       <engine name="cordova" version=">=3.0.0" />
     </engines>
 
-    <js-module src="www/Pdf2png.js" name="Pdf2png">
-      <clobbers target="pdf2png" />
+    <js-module src="www/pdftopng.js" name="pdftopng">
+      <clobbers target="pdftopng" />
     </js-module>
 
     <!-- ios -->
     <platform name="ios">
       <config-file target="config.xml" parent="/*">
-        <feature name="Pdf2png">
-          <param name="ios-package" value="Pdf2png"/>
+        <feature name="pdftopng">
+          <param name="ios-package" value="pdftopng"/>
           <param name="onload" value="true" />
         </feature>
       </config-file>
 
-      <header-file src="src/ios/Pdf2png.h" />
-      <source-file src="src/ios/Pdf2png.m" />
+      <header-file src="src/ios/pdftopng.h" />
+      <source-file src="src/ios/pdftopng.m" />
     </platform>
+    <!-- ios -->
 
+    <!-- android -->
     <platform name="android">
       <config-file target="config.xml" parent="/*">
-        <feature name="Pdf2png">
-          <param name="android-package" value="com.bendspoons.cordova.plugin.Pdf2png"/>
+        <feature name="PdfToPng">
+          <param name="android-package" value="com.bendspoons.pdftopng.PdfToPng"/>
         </feature>
       </config-file>
 
       <resource-file src="libs/java-rt-jar-stubs-1.5.0.jar" target="libs/java-rt-jar-stubs-1.5.0.jar" />
 
-      <source-file src="src/android/Pdf2png.java" target-dir="src/com/bendspoons/cordova/plugin" />
+      <source-file src="src/android/PdfToPng.java" target-dir="src/com/bendspoons/pdftopng" />
     </platform>
+    <!-- android -->
 
 </plugin>
