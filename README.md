@@ -9,32 +9,82 @@ This Plugin allows to extract a page from a given PDF file.
 
 Extracts one selected page from the given PDF file.
 
-Example
+Full featured example
 
 ```<img src="" id="myImage" /> ```
 
 
 ```
 pdftopng.getPage({
-	sourcePDF: useFile, // mandatory
-	page: 1,  // mandatory
-	width: 1240,  // mandatory
-	height: 1754,  // mandatory
+	sourcePDF: 'file:///storage/emulated/0/360/security/file.txt',
+	page: 1,
+	width: 1240,
+	height: 1754,
 	output: 'file',
 	targetDirectory: cordova.file.dataDirectory,
-	targetFilename: 'wurst.png'
+	targetFilename: 'output-image.png'
 }, function(success) {
-	console.log("++++ getPdfPng SUCCESS");
+	console.log("pdftopng.getPage SUCCESS");
 	console.log(JSON.stringify(success));
-	console.log(success);
 
-	$('#myImage').attr('src', "data:image/png;base64," + success.base64);
+	document.getElementById('myImage').src = "data:image/png;base64," + success.base64;
 }, function(error) {
-	console.log("++++ getPdfPng ERROR");
+	console.log("pdftopng.getPage ERROR");
 	console.log(JSON.stringify(error));
-	console.log(error);
 );
 ```
+
+**success**
+> returns JSON object 
+> ```{"success": {}}```
+
+**error**
+> returns JSON object
+> ```{"error": {}}```
+
+**Mandatory Parameters**
+> sourcePDF, page
+
+sourcePDF
+
+> source of the PDF, full path: file:///...
+
+page
+
+> page of the PDF file
+
+**Optional Parameters**
+> width, height, output, targetDirectory, targetFilename
+
+width
+
+> sourcePDF width
+
+height
+
+> sourcePDF height
+
+output
+
+> 'base64'
+
+>> 'base64' returns png as base64 encoded string
+
+>> 'file' saves png to targetDirectory + targetFilename and returns JSON object 
+
+>>> ```{"success": {"targetDirectory": targetDirectory, "targetFilename": targetFilename, "filesize": 123456}}```
+
+>>> ```{"error": {}}```
+
+targetDirectory
+
+> no default value, if output = file, this field is mandatory
+
+targetFilename
+
+> no default value, if output = file, this field is mandatory
+
+
 
 ### pdftopng.countPages(obj, success, error) ###
 
@@ -42,14 +92,25 @@ pdftopng.getPage({
 pdf2png.countPages({
     sourcePDF:"file:///path/to/file/test.pdf"  // mandatory
 }, function(success){
-  console.log("countPages success");    
+  console.log("pdf2png.countPages success");    
   console.log(JSON.stringify(success);     
 }, function(error){
-  console.log("countPages error");     
+  console.log("pdf2png.countPages error");     
   console.log(JSON.stringify(error);     
 }
 );
 ```
+
+**success**
+> returns JSON object 
+> ```{"success": {}}```
+
+**error**
+> returns JSON object
+> ```{"error": {}}```
+
+**Mandatory Parameters**
+> sourcePDF 
 
 ## Android Quirks
 
