@@ -1,7 +1,7 @@
 cordova-plugin-pdftopng
 ======================
 
-Install via ``` cordova plugin add https://github.com/bendspoons/cordova-plugin-pdftopng ```
+Install via ``` cordova plugin add https://github.com/bendspoons/cordova-plugin-pdftopng.git ```
 
 This Plugin allows to extract a page from a given PDF file.
 
@@ -45,26 +45,30 @@ pdftopng.getPage({
 **Mandatory Parameters**
 > sourcePDF, page
 
-sourcePDF
+sourcePDF (string)
 
 > source of the PDF, full path: file:///...
 
-page
+page (int)
 
-> page of the PDF file
+> target page of the PDF file (starting with 1, 2, ...)
 
 **Optional Parameters**
-> width, height, output, targetDirectory, targetFilename
+> dpi, width, height, output, targetDirectory, targetFilename
 
-width
+dpi (int)
 
-> sourcePDF width
+> no default value, if given, the height and width are calculated based on a DIN A4 Papersize (210x297mm), overrides width and height!
 
-height
+width (int)
+
+> sourcePDF width 
+
+height (int)
 
 > sourcePDF height
 
-output
+output (string)
 
 > 'base64'
 
@@ -76,11 +80,11 @@ output
 
 >>> ```{"error": {}}```
 
-targetDirectory
+targetDirectory  (string)
 
 > no default value, if output = file, this field is mandatory
 
-targetFilename
+targetFilename  (string)
 
 > no default value, if output = file, this field is mandatory
 
@@ -90,15 +94,14 @@ targetFilename
 
 ```
 pdf2png.countPages({
-    sourcePDF:"file:///path/to/file/test.pdf"  // mandatory
+  sourcePDF:"file:///path/to/file/test.pdf"  // mandatory
 }, function(success){
   console.log("pdf2png.countPages success");    
   console.log(JSON.stringify(success);     
 }, function(error){
   console.log("pdf2png.countPages error");     
   console.log(JSON.stringify(error);     
-}
-);
+});
 ```
 
 **success**
@@ -110,13 +113,14 @@ pdf2png.countPages({
 > ```{"error": {}}```
 
 **Mandatory Parameters**
-> sourcePDF 
+> sourcePDF  (string)
+> source of the PDF, full path: file:///...
 
 ## Android Quirks
 
 > Recommended use with Android Studio and gradle 4.4
 
-> Set this in your config.xml, needed for android.graphics.pdf.*, only available from API 21 (Android 5.0)
+> Set this in your config.xml, API 21 (Android 5.0)
 
 ```<preference name="android-minSdkVersion" value="21" />```
 
