@@ -18,6 +18,7 @@ Full featured example
 pdftopng.getPage({
 	sourcePDF: 'file:///storage/emulated/0/360/security/file.txt',
 	page: 1,
+	dpi: 72,
 	width: 1240,
 	height: 1754,
 	output: 'file',
@@ -35,7 +36,7 @@ pdftopng.getPage({
 ```
 
 **success**
-> returns JSON object 
+> returns JSON object
 > ```{"success": {}}```
 
 **error**
@@ -62,7 +63,7 @@ dpi (int)
 
 width (int)
 
-> sourcePDF width 
+> sourcePDF width
 
 height (int)
 
@@ -74,7 +75,7 @@ output (string)
 
 >> 'base64' returns png as base64 encoded string
 
->> 'file' saves png to targetDirectory + targetFilename and returns JSON object 
+>> 'file' saves png to targetDirectory + targetFilename and returns JSON object
 
 >>> ```{"success": {"targetDirectory": targetDirectory, "targetFilename": targetFilename, "filesize": 123456}}```
 
@@ -105,7 +106,7 @@ pdf2png.countPages({
 ```
 
 **success**
-> returns JSON object 
+> returns JSON object
 > ```{"success": {}}```
 
 **error**

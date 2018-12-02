@@ -60,7 +60,7 @@ public class PdfToPng extends CordovaPlugin {
             Integer useDpi = 0;
             Boolean calcWithDpi = false;
             Double dpiCalcWidthF = 8.2677165354330708661417322834646; // A4: 21/2.54 * dpi
-            Double dpiCalcHeightF = 11.692913385826771653543307086614d; // A4: 21/2.54 * dpi
+            Double dpiCalcHeightF = 11.692913385826771653543307086614; // A4: 21/2.54 * dpi
 
             String outputType = "base64";
 
