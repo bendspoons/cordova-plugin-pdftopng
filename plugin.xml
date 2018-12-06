@@ -21,14 +21,11 @@
     <!-- ios -->
     <platform name="ios">
       <config-file target="config.xml" parent="/*">
-        <feature name="pdftopng">
-          <param name="ios-package" value="pdftopng"/>
-          <param name="onload" value="true" />
+        <feature name="PdfToPng">
+          <param name="ios-package" value="PdfToPng" />
         </feature>
       </config-file>
-
-      <header-file src="src/ios/pdftopng.h" />
-      <source-file src="src/ios/pdftopng.m" />
+      <source-file src="src/ios/PdfToPng.swift" />
     </platform>
     <!-- ios -->
 
